@@ -115,7 +115,7 @@ margin_top = 343.22
 margin_right = 699.406
 margin_bottom = 453.22
 custom_fonts/font = SubResource( 4 )
-text = "joguin legal"
+text = "Jog"
 __meta__ = {
 "_edit_use_anchors_": false
 }
