@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fonts/zx-spectrum.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Images/Icons/coin.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ShopBackBtn.gd" type="Script" id=3]
+[ext_resource path="res://Images/Backgrounds/fundo_madeira.jpg" type="Texture" id=4]
+[ext_resource path="res://Images/Other/arrow+back+arrow+right+right+icon-1320185739082709708.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="fundo_madeira" type="Sprite" parent="."]
+position = Vector2( 345.444, 805.376 )
+rotation = -1.5708
+texture = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 3.99255
+margin_top = 395.172
+margin_right = 345.993
+margin_bottom = 628.172
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 369.87
+margin_top = 1127.93
+margin_right = 711.87
+margin_bottom = 1360.93
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 2.36743
+margin_top = 776.201
+margin_right = 344.367
+margin_bottom = 1009.2
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 7.16748
+margin_top = 1133.54
+margin_right = 349.167
+margin_bottom = 1366.54
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="."]
+margin_left = 370.655
+margin_top = 395.979
+margin_right = 712.655
+margin_bottom = 628.979
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="."]
+margin_left = 369.116
+margin_top = 775.308
+margin_right = 711.116
+margin_bottom = 1008.31
+custom_fonts/font = SubResource( 1 )
+text = "GAME 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="Sprite" parent="."]
+position = Vector2( 582.531, 130.234 )
+scale = Vector2( 3.36502, 3.47013 )
+texture = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 403.63
+margin_top = 97.544
+margin_right = 513.63
+margin_bottom = 152.544
+custom_fonts/font = SubResource( 2 )
+text = "87"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 62.3188
+margin_top = 50.8185
+margin_right = 249.319
+margin_bottom = 214.818
+texture_normal = ExtResource( 5 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

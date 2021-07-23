@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ItsAllGood.mp3-7f5dd8fe5a2142e2e5be11560f3a9ab5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/ItsAllGood.mp3"
+dest_files=[ "res://.import/ItsAllGood.mp3-7f5dd8fe5a2142e2e5be11560f3a9ab5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
