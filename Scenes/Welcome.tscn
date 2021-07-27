@@ -62,7 +62,7 @@ position = Vector2( 354.968, 886.221 )
 scale = Vector2( 9.46611, 10.4112 )
 frames = SubResource( 1 )
 animation = "growth"
-frame = 3
+frame = 4
 playing = true
 
 [node name="EnterGame" type="Button" parent="."]
