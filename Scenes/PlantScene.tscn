@@ -34,11 +34,11 @@ animations = [ {
 "speed": 0.2
 } ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 48
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 48
 font_data = ExtResource( 7 )
 
@@ -114,7 +114,7 @@ position = Vector2( 354.968, 886.221 )
 scale = Vector2( 9.46611, 10.4112 )
 frames = SubResource( 4 )
 animation = "growth"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Shop" type="Button" parent="."]
@@ -122,7 +122,7 @@ margin_left = 356.597
 margin_top = 1468.34
 margin_right = 588.597
 margin_bottom = 1529.34
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Loja"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,7 +133,7 @@ margin_left = 356.597
 margin_top = 1336.49
 margin_right = 643.597
 margin_bottom = 1397.49
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Jogos"
 __meta__ = {
 "_edit_use_anchors_": false

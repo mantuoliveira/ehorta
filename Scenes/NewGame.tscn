@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fonts/zx-spectrum.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Images/Backgrounds/bg_top.png" type="Texture" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://Scripts/SoundControll.gd" type="Script" id=5]
 [ext_resource path="res://Images/Icons/merged.png" type="Texture" id=6]
 [ext_resource path="res://Sounds/Music/ItsAllGood.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Images/Other/botão_loja.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/ShopBtn.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/Effects/pop.mp3" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -77,10 +79,29 @@ margin_right = 675.902
 margin_bottom = 166.303
 custom_fonts/font = SubResource( 3 )
 text = "Loja"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopNew" type="TextureButton" parent="."]
+margin_left = 445.0
+margin_top = 108.0
+margin_right = 669.0
+margin_bottom = 165.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="ShopNew"]
+position = Vector2( 113.363, 39.2001 )
+scale = Vector2( 0.293691, 0.293691 )
+texture = ExtResource( 8 )
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="ShopNew"]
+stream = ExtResource( 10 )
+
 [connection signal="input_event" from="SoundControll" to="SoundControll" method="_on_input_event"]
 [connection signal="button_up" from="Shop" to="Shop" method="_on_button_up"]
+[connection signal="button_down" from="ShopNew" to="ShopNew" method="_on_button_down"]
+[connection signal="button_up" from="ShopNew" to="ShopNew" method="_on_button_up"]

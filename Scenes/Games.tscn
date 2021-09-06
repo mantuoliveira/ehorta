@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Fonts/zx-spectrum.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Images/Icons/coin.png" type="Texture" id=2]
+[ext_resource path="res://Images/Icons/coin/sprite_3.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/ShopBackBtn.gd" type="Script" id=3]
 [ext_resource path="res://Images/Backgrounds/fundo_madeira.jpg" type="Texture" id=4]
 [ext_resource path="res://Images/Other/arrow+back+arrow+right+right+icon-1320185739082709708.png" type="Texture" id=5]
+[ext_resource path="res://Images/Icons/coin/sprite_2.png" type="Texture" id=6]
+[ext_resource path="res://Images/Icons/coin/sprite_4.png" type="Texture" id=7]
+[ext_resource path="res://Images/Icons/coin/sprite_6.png" type="Texture" id=8]
+[ext_resource path="res://Images/Icons/coin/sprite_5.png" type="Texture" id=9]
+[ext_resource path="res://Images/Icons/coin/sprite_7.png" type="Texture" id=10]
+[ext_resource path="res://Images/Icons/coin/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://Images/Icons/coin/sprite_0.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -13,6 +20,14 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 48
 font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -87,11 +102,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="coin" type="Sprite" parent="."]
-position = Vector2( 582.531, 130.234 )
-scale = Vector2( 3.36502, 3.47013 )
-texture = ExtResource( 2 )
-
 [node name="Label2" type="Label" parent="."]
 margin_left = 403.63
 margin_top = 97.544
@@ -114,5 +124,12 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="coin" type="AnimatedSprite" parent="."]
+position = Vector2( 580.928, 127.84 )
+scale = Vector2( 1.76184, 1.76184 )
+frames = SubResource( 3 )
+frame = 7
+playing = true
 
 [connection signal="button_up" from="TextureButton" to="TextureButton" method="_on_button_up"]

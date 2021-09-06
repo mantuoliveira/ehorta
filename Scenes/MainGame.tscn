@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Fonts/zx-spectrum.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Images/Backgrounds/bg_top.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Images/Other/gnome-settings-icon.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/ConfigBtn.gd" type="Script" id=13]
 [ext_resource path="res://Scripts/ItensBtn.gd" type="Script" id=14]
+[ext_resource path="res://Sounds/Effects/pop.mp3" type="AudioStream" id=15]
+[ext_resource path="res://Images/Other/botão_loja.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45.5214, 43.4351 )
@@ -88,17 +90,20 @@ centered = false
 position = Vector2( 112.975, 119.515 )
 shape = SubResource( 2 )
 
-[node name="Shop" type="Button" parent="."]
-margin_left = 443.902
-margin_top = 105.303
-margin_right = 675.902
-margin_bottom = 166.303
-custom_fonts/font = SubResource( 3 )
-text = "Loja"
+[node name="ShopNew" type="TextureButton" parent="."]
+margin_left = 440.757
+margin_top = 75.0086
+margin_right = 677.757
+margin_bottom = 205.009
+texture_normal = ExtResource( 16 )
+expand = true
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="ShopNew"]
+stream = ExtResource( 15 )
 
 [node name="Games" type="Button" parent="."]
 margin_left = 395.956
@@ -140,14 +145,14 @@ scale = Vector2( 0.200903, 0.200903 )
 script = ExtResource( 13 )
 
 [node name="gnome-settings-icon" type="Sprite" parent="Area2D"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 4 )
 
 [connection signal="input_event" from="SoundControll" to="SoundControll" method="_on_input_event"]
-[connection signal="button_up" from="Shop" to="Shop" method="_on_button_up"]
+[connection signal="button_down" from="ShopNew" to="ShopNew" method="_on_button_down"]
+[connection signal="button_up" from="ShopNew" to="ShopNew" method="_on_button_up"]
 [connection signal="button_up" from="Games" to="Games" method="_on_button_up"]
 [connection signal="button_up" from="Itens" to="Itens" method="_on_button_up"]
 [connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]

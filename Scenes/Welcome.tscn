@@ -2,16 +2,17 @@
 
 [ext_resource path="res://Images/Backgrounds/bg_top.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/ParallaxBackground.gd" type="Script" id=2]
-[ext_resource path="res://Images/Backgrounds/bg_bottom.png" type="Texture" id=3]
+[ext_resource path="res://Images/Backgrounds/cenário1 grama.png" type="Texture" id=3]
 [ext_resource path="res://Images/Sprites/sprite_6.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/zx-spectrum.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scripts/EnterGameNew.gd" type="Script" id=6]
 [ext_resource path="res://Images/Icons/128px-Instagram_icon.png" type="Texture" id=7]
 [ext_resource path="res://Images/Icons/merged.png" type="Texture" id=8]
 [ext_resource path="res://Sounds/Music/ItsAllGood.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Scripts/SoundControll.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/EnterGame.gd" type="Script" id=11]
 [ext_resource path="res://Sounds/Effects/pop.mp3" type="AudioStream" id=12]
 [ext_resource path="res://Scripts/Instagram.gd" type="Script" id=13]
+[ext_resource path="res://Images/Icons/new_game_btn.png" type="Texture" id=14]
 [ext_resource path="res://Images/Sprites/sprite_5.png" type="Texture" id=15]
 [ext_resource path="res://Images/Sprites/sprite_4.png" type="Texture" id=16]
 [ext_resource path="res://Images/Sprites/sprite_3.png" type="Texture" id=17]
@@ -26,14 +27,10 @@ animations = [ {
 "speed": 0.2
 } ]
 
-[sub_resource type="DynamicFont" id=2]
-size = 58
-font_data = ExtResource( 5 )
-
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 45.5214, 43.4351 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 96
 font_data = ExtResource( 5 )
 
@@ -43,7 +40,8 @@ font_data = ExtResource( 5 )
 z_index = -10
 
 [node name="bg_bottom" type="Sprite" parent="Background"]
-position = Vector2( 0, 500 )
+position = Vector2( -136.367, 3.32666 )
+scale = Vector2( 0.431053, 0.783203 )
 texture = ExtResource( 3 )
 centered = false
 
@@ -54,38 +52,25 @@ script = ExtResource( 2 )
 motion_mirroring = Vector2( 2160, 0 )
 
 [node name="bg_top" type="Sprite" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 721.12, 0.000247955 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Plant" type="AnimatedSprite" parent="."]
-position = Vector2( 354.968, 886.221 )
+position = Vector2( 371.417, 889.507 )
 scale = Vector2( 9.46611, 10.4112 )
 frames = SubResource( 1 )
 animation = "growth"
-frame = 4
+frame = 5
 playing = true
 
-[node name="EnterGame" type="Button" parent="."]
-margin_left = 44.549
-margin_top = 1325.52
-margin_right = 680.549
-margin_bottom = 1448.52
-custom_fonts/font = SubResource( 2 )
-text = "Novo Jogo"
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ClickSound" type="AudioStreamPlayer" parent="EnterGame"]
-stream = ExtResource( 12 )
-
 [node name="Instagram" type="TextureButton" parent="."]
-margin_left = 565.562
-margin_top = 28.1951
-margin_right = 693.562
-margin_bottom = 156.195
+margin_left = 566.0
+margin_top = 32.0
+margin_right = 692.0
+margin_bottom = 139.0
 texture_normal = ExtResource( 7 )
+expand = true
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -97,7 +82,7 @@ script = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundControll"]
 position = Vector2( 44.0332, 46.7729 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="SoundIcon" type="Sprite" parent="SoundControll"]
 position = Vector2( 47.6235, 47.3562 )
@@ -114,13 +99,31 @@ margin_left = 41.4056
 margin_top = 343.22
 margin_right = 699.406
 margin_bottom = 453.22
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 3 )
 text = "life"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="button_down" from="EnterGame" to="EnterGame" method="_on_button_down"]
-[connection signal="button_up" from="EnterGame" to="EnterGame" method="_on_button_up"]
+[node name="EnterGameNew" type="TextureButton" parent="."]
+margin_left = 49.0
+margin_top = 1260.0
+margin_right = 681.0
+margin_bottom = 1383.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonImage" type="Sprite" parent="EnterGameNew"]
+position = Vector2( 308.844, 101.083 )
+scale = Vector2( 0.309211, 0.309211 )
+texture = ExtResource( 14 )
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="EnterGameNew"]
+stream = ExtResource( 12 )
+
 [connection signal="button_up" from="Instagram" to="Instagram" method="_on_button_up"]
 [connection signal="input_event" from="SoundControll" to="SoundControll" method="_on_input_event"]
+[connection signal="button_down" from="EnterGameNew" to="EnterGameNew" method="_on_button_down"]
+[connection signal="button_up" from="EnterGameNew" to="EnterGameNew" method="_on_button_up"]
